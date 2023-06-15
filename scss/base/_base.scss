@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  @include flex;
+  font-size: var(--font-size);
+  color: var(--font-color);
+  font-family: 'Outfit', sans-serif;
+  background: var(--main-bg);
+  min-height: 100svh;
+}
+
+a {
+  color: var(--highlight-color);
+  text-decoration: none;
+
+  &:visited {
+    color: var(--highlight-color);
+  }
+
+  &:hover,
+  &:focus {
+    color: var(--hover-color);
+  }
+}
+
+img {
+  display: block;
+}

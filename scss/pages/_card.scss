@@ -1,0 +1,83 @@
+.card {
+  background: var(--card-bg-color);
+  min-width: 20.5rem;
+  max-width: 22rem;
+  margin: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 1.125rem;
+
+  &__img-container {
+    position: relative;
+    border-radius: 0.75rem;
+    overflow: hidden;
+
+    &:hover {
+      cursor: pointer;
+
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 0 0 0 0;
+        background: var(--hover-color);
+        opacity: 0.5;
+      }
+
+      &::after {
+        content: url(/assets/img/icon-view.svg);
+        @include flex;
+        position: absolute;
+        inset: 0 0 0 0;
+      }
+    }
+
+    &--img {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    margin: 1.25rem 0 1rem 0;
+  }
+
+  &__desc {
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1.75rem;
+  }
+
+  &__info {
+    @include flex($j: space-between);
+    margin: 1rem 0 1.125rem 0;
+
+    span {
+      @include flex($j: null);
+      font-size: 1rem;
+
+      img {
+        margin-right: 0.5rem;
+      }
+    }
+
+    &--price {
+      color: var(--hover-color);
+    }
+
+    &--time {
+      font-weight: 300;
+    }
+  }
+}
+
+.creator {
+  @include flex($j: null);
+  border-top: 1px solid var(--line-color);
+  padding-top: 1rem;
+
+  &__profile {
+    height: 2rem;
+    border: 1px solid var(--highlight-color);
+    border-radius: 50%;
+    margin-right: 1rem;
+  }
+}
